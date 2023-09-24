@@ -21,11 +21,16 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit from pioneer device
 $(call inherit-product, device/sony/pioneer/device.mk)
 
+TARGET_USES_NQ_NFC := true
+USE_DEVICE_SPECIFIC_FM := true
+TARGET_INCLUDE_LIVE_WALLPAPERS := false
+
 # Inherit some common Lineage stuff.
 #$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 $(call inherit-product, vendor/aosp/config/common_full_phone.mk)
 
 TARGET_BOOT_ANIMATION_RES := 1080
+TARGET_GAPPS_ARCH := arm64
 
 # Device identifier. This must come after all inclusions
 PRODUCT_NAME := aosp_pioneer
@@ -33,6 +38,8 @@ PRODUCT_DEVICE := pioneer
 PRODUCT_BRAND := Sony
 PRODUCT_MODEL := Xperia XA2
 PRODUCT_MANUFACTURER := Sony
+
+PRODUCT_SYSTEM_NAME := pioneer
 
 PRODUCT_GMS_CLIENTID_BASE := android-sony
 
